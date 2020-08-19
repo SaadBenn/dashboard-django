@@ -59,6 +59,7 @@ function TabWrapper({ children }) {
             <MaterialTab key={tab.props.title} label={tab.props.title} {...a11yProps(i)} />
           ))}
         </Tabs>
+        
       </AppBar>
       {React.Children.toArray(children).map((tab, i) => (
         <TabPanel key={tab.props.title} value={value} index={i}>

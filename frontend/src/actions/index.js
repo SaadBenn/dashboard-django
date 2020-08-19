@@ -8,3 +8,8 @@ export const loadRevenueData = userId => (dispatch, getState) => {
       data: d.revenue,
     }));
 };
+
+
+export const getMeSomething = () => {
+  return "foobar";
+}

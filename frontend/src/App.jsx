@@ -11,7 +11,7 @@ const App = () => (
     <Tab title="Manager">
       <RevenueGraph userId={32} />
     </Tab>
-    <Tab title="Director">
+    <Tab title="Dicret">
       <RevenueGraph userId={2} />
     </Tab>
   </TabWrapper>
