@@ -4,6 +4,22 @@ import { connect } from 'react-redux';
 import RevenueGraph from '../Components/RevenueGraph';
 import { loadRevenueData } from '../actions';
 
-const Container = () => null;
+const Container = ({ userId, revenue, loadRevenueData }) => {
+  return (
+    <RevenueGraph
+      revenue={revenue}
+      userId={userId}
+      loadRevenueData={loadRevenueData}
+    />
+  );
+};
 
-export default Container;
+const mapStateToProps = ({ revenue }) => {
+  return {
+    revenue,
+  };
+};
+
+export default connect(mapStateToProps, {
+  loadRevenueData,
+})(Container);
