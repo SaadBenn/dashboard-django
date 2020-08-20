@@ -30,15 +30,15 @@ def get_revenue_by_sales_rep(request, user_id):
                 data.append(temp)
 
     else:
-        data = get_revenue_sum(user_id)
+        data.append(get_revenue_sum(user_id))
+
 
     print('**********************')
     print(data)
     return JsonResponse({"revenue": data})
 
 def get_revenue_sum(salesrep_id):
-    
     salesRepObj = EmployeeRelation.objects.get(employee_id=salesrep_id)
     full_name = salesRepObj.employee.get_full_name()
     sales_revenue = "{:.2f}".format(SalesLines.objects.filter(rep_id=salesrep_id).aggregate(Sum('revenue'))['revenue__sum'])
-    return {full_name, sales_revenue}
+    return {"name":full_name, "revenue":sales_revenue}

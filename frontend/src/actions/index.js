@@ -5,7 +5,7 @@ export const loadRevenueData = userId => (dispatch, getState) => {
     .then(d => dispatch({
       type: 'LOAD_REVENUE_DATA',
       userId,
-      data: d.revenue,
+      data: d
     }));
 };
 
@@ -17,7 +17,7 @@ export const loadRevenueData = userId => (dispatch, getState) => {
 //         {
 //           name: 'Akeel Peters',
 //           revenue: '17248.65',
-//         },object
+//         },
 //         {
 //           name: 'Faye Finch',
 //           revenue: '18372.40',
@@ -38,6 +38,8 @@ export const loadRevenueData = userId => (dispatch, getState) => {
 //     };
 //   }
 //   if (userId === 32) {
+
+      
 //     data = {
 //       revenue: [
 //         {
