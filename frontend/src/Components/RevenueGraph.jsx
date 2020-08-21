@@ -6,9 +6,6 @@ import { useSelector } from 'react-redux';
 
 const RevenueGraph = ({ userId, loadRevenueData }) => {
   const data = useSelector(({ revenue }) => revenue[userId]);
-  console.log('***************')
-  console.log(data);
-  console.log('*************')
 
   useEffect(() => {
     loadRevenueData(userId);
