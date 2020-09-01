@@ -6,6 +6,7 @@ from datetime import datetime
 from backend.helpers import date_range_intersect
 import logging
 
+# logger for debugging purposes
 logger = logging.getLogger(__name__)
 
 def get_revenue_by_sales_rep(request, user_id):    
